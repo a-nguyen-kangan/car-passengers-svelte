@@ -3,12 +3,6 @@
 
     export let people: Person[] = []; 
 
-    $:  if(people.length > 0) {
-            for(let i = 0; i < people.length; i++) {
-                people[i].age = people[i].age + 5;
-            }
-        }
-
 </script>
 
 {#if people.length > 0}
