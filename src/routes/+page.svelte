@@ -7,6 +7,8 @@
     let make: string = 'Ford';
     let model: string = 'Falcon';
 
+    let api_url: string = 'http://carspassengersapi.azurewebsites.net/';
+
     let peeps = [ 
         { id: 1, name: 'John', age: 30 },
         { id: 2, name: 'Jane', age: 40 },
@@ -17,8 +19,10 @@
     let addCarPromise: any;
 
     async function getAllPeople() {
+        let endpoint = api_url + 'people';
+
         try {
-            const response = await fetch('http://localhost:5024/people');
+            const response = await fetch(endpoint);
             const data = await response.json();
             peeps = data;
             console.log(data);
@@ -30,7 +34,8 @@
 
     // async function getAllPeople2()
     let getAllPeople2 = async () => {
-        const response = await fetch('http://localhost:5024/people')
+        let endpoint = api_url + 'people';
+        const response = await fetch(endpoint)
                                 .then(res => res.json())
                                 .then(data => { peeps = data })
                                 .catch(err => { console.error(err); peeps = [] });
@@ -44,7 +49,9 @@
         let newCar: Car = new Car(rego, colour, make, model);
         console.log(JSON.stringify(newCar));
 
-        const response = await fetch('http://localhost:5024/cars', {
+        let endpoint = api_url + 'cars';
+
+        const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
