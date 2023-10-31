@@ -7,7 +7,7 @@
     let make: string = 'Ford';
     let model: string = 'Falcon';
 
-    let api_url: string = 'http://carspassengersapi.azurewebsites.net/';
+    let api_url: string = 'https://carspassengersapi.azurewebsites.net/';
 
     let peeps = [ 
         { id: 1, name: 'John', age: 30 },
