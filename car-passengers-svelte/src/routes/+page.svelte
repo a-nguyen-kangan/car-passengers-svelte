@@ -1,13 +1,14 @@
 <script lang='ts'>
     import PeopleComp from "./PeopleComp.svelte";
     import { Car } from "$lib/car";
+    import { PUBLIC_API_URL } from "$env/static/public";
 
     let rego: string = 'STS-567';
     let colour: string  = 'red';
     let make: string = 'Ford';
     let model: string = 'Falcon';
 
-    let api_url: string = 'https://carspassengersapi.azurewebsites.net/';
+    let api_url: string = PUBLIC_API_URL;
 
     let peeps = [ 
         { id: 1, name: 'John', age: 30 },
